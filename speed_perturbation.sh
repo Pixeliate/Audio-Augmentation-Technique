@@ -22,7 +22,8 @@ for i in $x; do # Not recommended, will break on whitespace
     IFS='/'
     read -a o1 <<<"$i" #reading str as an array as tokens separated by IFS
     #echo ${o1[-1]}
-    out="$target$speed/$speed$o1"
+    IFS=''
+    out="$target$speed/$speed${o1[-1]}"
     sox $i $out speed $factor
     #echo $out
     #break
