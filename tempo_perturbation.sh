@@ -23,7 +23,7 @@ for i in $x; do # Not recommended, will break on whitespace
     read -a o1 <<<"$i" #reading str as an array as tokens separated by IFS
     #echo ${o1[-1]}
     out="$target$tempo/$tempo$o1"
-    #ffmpeg -i $i -filter:a "atempo=$factor" $out
+    ffmpeg -i $i -filter:a "atempo=$factor" $out
     echo $out
     #break
 done
